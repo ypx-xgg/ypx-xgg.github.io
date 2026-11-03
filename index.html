@@ -1,11 +1,65 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="UTF-8>
-   <title>我的第一个网站</title>
+  <meta charset="UTF-8">
+  <title>我的个人主页</title>
+  <style>
+    /* 这里是网页的美化设置 */
+    body {
+      font-family: '微软雅黑', sans-serif;
+      background-color: #f4f7f6; /* 背景颜色（浅灰色） */
+      color: #333; /* 文字颜色（深灰色） */
+      text-align: center; /* 文字居中 */
+      padding: 50px;
+    }
+    h1 {
+      color: #2c3e50; /* 大标题颜色 */
+    }
+    .卡片 {
+      background-color: white; /* 卡片的背景是白色的 */
+      padding: 30px;
+      border-radius: 10px; /* 卡片变成圆角 */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加一点阴影，看起来有立体感 */
+      max-width: 600px; /* 卡片的最大宽度 */
+      margin: 0 auto; /* 让卡片在页面正中间 */
+    }
+    .图片 {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%; /* 把图片变成圆形 */
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .按钮 {
+      display: inline-block;
+      background-color: #3498db; /* 按钮是蓝色 */
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none; /* 去掉链接默认的下划线 */
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body style="text-align: center;
-    h1>你好，这是我的第一个网站<h1>
-    <p>                            太好了！我的第一个网站它终于上线了！哈哈！</p>
+<body>
+
+  <!-- 网页里的内容都在这里 -->
+  <div class="卡片">
+    
+    <!-- 这里是一张图片（我放了一张网上的占位图，你以后可以换成自己的） -->
+    < img src="https://picsum.photos/200/200" alt="我的头像" class="图片">
+    
+    <h1>你好，我是 想哥哥，一个喜欢学习折腾新东西的人</h1>
+    <p>欢迎来到我的第一个个人网站！哈哈啥！我终于把它搞定了，非常感谢DeepSeek的帮助！</p >
+    
+    <h3>关于我：</h3>
+    <p>喜欢折腾电脑、听歌、看电影，折腾些新玩意。</p >
+    
+    <!-- 这里是一个能点击的按钮链接 -->
+    <a href=" " class="按钮" target="_blank">点我去 B 站逛逛</a >
+    
+  </div>
+
 </body>
 </html>
