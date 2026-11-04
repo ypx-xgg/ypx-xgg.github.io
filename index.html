@@ -7,7 +7,7 @@
     /* 这里是网页的美化设置 */
     body {
       font-family: '微软雅黑', sans-serif;
-     */ background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);     text-align: center; /* 文字居中 */
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);     text-align: center; /* 文字居中 */
       padding: 50px;
     }
     h1 {
@@ -30,18 +30,20 @@
     }
     .按钮 {
       display: inline-block;
-      background-color: #3498db; /* 按钮是蓝色 */
+      background-color: #3498db;  /* 平时是蓝色 */
       color: white;
       padding: 10px 20px;
       text-decoration: none; /* 去掉链接默认的下划线 */
       border-radius: 5px;
       margin-top: 20px;
       
-      transition: background-color 0.3s; /* 让颜色变化有一个缓冲动画 */
+      transition: all 0.3s ease; /* 加上这个，颜色变化就像动画一样丝滑 */
 
     }
 .按钮:hover {
-  background-color: #2980b9; /* 鼠标放上去时，变成深蓝色 */
+  background-color: #2ecc71; /* 鼠标放上去，变成鲜艳的绿色 */ */
+  transform: translateY(-3px);  /*鼠标放上去时，按钮微微向上浮起*/
+  box-shadow:  0  4px  10px  rgba(46,  204,  113,  0.3);/*加一点绿色的发光阴影 */
 }
 
   </style>
