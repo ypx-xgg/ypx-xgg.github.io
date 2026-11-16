@@ -12,7 +12,7 @@
         padding: 50px;
       }
       h1 {
-        color: #c8161d; /* 大标题颜色 */
+        color: #2c3e50; /* 大标题颜色 */
       }
       .卡片 {
         background-color:#d6eaf8; /* 卡片的背景是浅蓝色的 */
@@ -59,18 +59,58 @@
       <!-- 这里是一张图片（我放了一张网上的占位图，你以后可以换成自己的） -->
       <img src="https://cdn.dbimg.app/WHEEClfP.jpg" alt="我的头像" class="图片">
     
-      <h1>你好，我是 想哥哥</h1>
+      <h1>你好，<span style="font-size:16px;">我是</span> <span style="color:#c8161d;">想哥哥</span></h1>
       <p>一个喜欢学习折腾新东西的人</p>
       <p>欢迎来到我的第一个个人网站！</p>
       <p>哈哈！我终于把它搞定了,非常感谢DeepSeek的帮助！</p >
     
      <h3>关于我：</h3>
       <p>喜欢折腾电脑、听歌、看电影，折腾些新玩意。</p >
-    
+              
+      <!-- 这是一个时钟容器 -->
+      <div style="margin-top: 20px; font-size: 24px; font-weight: bold; color: #2980b9;">
+        当前时间：<span id="clock"></span>
+      </div>
+
+      <!-- 这是让时钟动起来的代码 -->
+      <script>
+       function updateClock() {
+          var now = new Date();
+          var hours = String(now.getHours()).padStart(2, '0');
+          var minutes = String(now.getMinutes()).padStart(2, '0');
+          var seconds = String(now.getSeconds()).padStart(2, '0');
+          document.getElementById('clock').innerText = hours + ":" + minutes + ":" + seconds;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+      </script>
       <!-- 这里是一个能点击的按钮链接 -->
       <a href="//www.douyin.com/qishui/playlist/7466629159607863347 " class="按钮" target="_blank">点我去 汽水音乐听歌</a >
       <a href="//www.douyin.com/video/7647976629548895529 " class="按钮" target="_blank">点我去看红果短剧</a>
-  
+
+      <!-- 鼠标拖尾星星特效 -->
+<script>
+  document.addEventListener('mousemove', function(e) {
+    var star = document.createElement('div');
+    star.innerHTML = '✨';
+    star.style.position = 'absolute';
+    star.style.left = e.pageX + 'px';
+    star.style.top = e.pageY + 'px';
+    star.style.fontSize = '20px';
+    star.style.pointerEvents = 'none'; // 防止挡住你的点击
+    star.style.transition = 'all 1s ease-out';
+    document.body.appendChild(star);
+    
+    setTimeout(function() {
+      star.style.transform = 'translateY(50px) scale(0)';
+      star.style.opacity = '0';
+    }, 10);
+    
+    setTimeout(function() {
+      star.remove();
+    }, 1000);
+  });
+</script>
      </div>
 
    </body>
