@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>想哥哥的个人空间</title>
+    <title>我的个人主页</title>
     <style>
      /* 这里是网页的美化设置 */
       body {
@@ -51,15 +51,15 @@
  
   </head>
 
-  <body>
+  <body id="main-body" >
 
     <!-- 网页里的内容都在这里 -->
-    <div class="卡片">
+    <div class="卡片"id=main-card>
     
       <!-- 这里是一张图片（我放了一张网上的占位图，你以后可以换成自己的） -->
       <img src="https://cdn.dbimg.app/WHEEClfP.jpg" alt="我的头像" class="图片">
     
-      <h1>你好，<span style="font-size:16px;">我是</span> <span style="color:#c8161d;">想哥哥</span></h1>
+      <h1>你好，<span style="font-size:16px;">我是</span> <span style="color:#c8161d;"><b><i>想哥哥</i></b></span></h1>
       <p>一个喜欢学习折腾新东西的人</p>
       <p>欢迎来到我的第一个个人网站！</p>
       <p>哈哈！我终于把它搞定了,非常感谢DeepSeek的帮助！</p >
@@ -88,6 +88,8 @@
       <a href="//www.douyin.com/qishui/playlist/7466629159607863347 " class="按钮" target="_blank">点我去 汽水音乐听歌</a >
       <a href="//www.douyin.com/video/7647976629548895529 " class="按钮" target="_blank">点我去看红果短剧</a>
 
+       <button onclick="toggleDarkMode()" style="margin-top: 20px; padding: 8px 15px; cursor: pointer;">切换暗黑模式</button>
+
       <!-- 鼠标拖尾星星特效 -->
 <script>
   document.addEventListener('mousemove', function(e) {
@@ -113,6 +115,33 @@
 </script>
      </div>
 
+<script>
+  function toggleDarkMode() {
+    var body = document.getElementById('main-body');
+    var card = document.getElementById('main-card');
+    
+    // 如果背景现在是白色的，就变成黑色；否则变回原来的
+    if (body.style.backgroundColor !== 'black') {
+      body.style.backgroundColor = 'black';
+      body.style.backgroundImage = 'none'; // 取消原来的渐变色
+      card.style.backgroundColor = '#2c3e50';
+      card.style.color = 'white';
+    } else {
+      body.style.backgroundColor = ''; // 恢复默认
+      body.style.backgroundImage = ''; 
+      card.style.backgroundColor = 'white';
+      card.style.color = '#333';
+    }
+  }
+</script>
+
    </body>
 <p style="font-size:8px;">© 2026  想哥哥  版权所有</p >
+
+<div style="margin-top: 15px; font-size: 14px; color: #666;">
+  你是第 <span id="busuanzi_value_site_pv" style="color: #2980b9; font-weight: bold;">0</span> 位访客
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.0/busuanzi.pure.mini.js"></script>
+
 </html>
+
