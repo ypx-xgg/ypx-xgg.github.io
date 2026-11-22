@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>想哥哥的个人空间</title>
+    <title>我的个人主页</title>
     <style>
      /* 这里是网页的美化设置 */
       body {
@@ -22,14 +23,20 @@
         max-width: 600px; /* 卡片的最大宽度 */
         margin: 0 auto; /* 让卡片在页面正中间 */
       }
-      .图片 {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%; /* 把图片变成圆形 */
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-      .按钮 {
+       .图片 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  /* 下面是呼吸发光的魔法 */
+  animation: breathe 3s infinite alternate;
+}
+@keyframes breathe {
+  0% { box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); }
+  100% { box-shadow: 0 0 30px rgba(52, 152, 219, 0.9); }
+}
+    .按钮 {
         display: inline-block;
         background-color: #3498db;  /* 平时是蓝色 */
         color: white;
@@ -57,21 +64,27 @@
     <div class="卡片"id=main-card>
     
       <!-- 这里是一张图片（我放了一张网上的占位图，你以后可以换成自己的） -->
-      <img src="https://cdn.dbimg.app/WHEEClfP.jpg" alt="我的头像" class="图片">
+      < img src="https://cdn.dbimg.app/WHEEClfP.jpg" alt="我的头像" class="图片">
 
-  
-      <h1>你好，<span style="font-size:16px;">我是</span> <span style="color:#c8161d;"><b><i>想哥哥</i></b></span></h1>
-      <p>一个喜欢学习折腾新东西的人</p>
-      <p>欢迎来到我的第一个个人网站！</p>
-      <p>哈哈！我终于成功迈出第一步了,非常感谢DeepSeek的帮助！</p >
+       <h1 id="typewriter" style="color: #2c3e50; min-height: 40px;"></h1>
+
     
-     <h3>关于我：</h3>
-      <p>喜欢折腾电脑、听歌、看电影，折腾些新玩意。</p >
+      <h1>你好，<span style="font-size:16px;">我是</span> <span style="color:#c8161d;"><b><i>想哥哥</i></b></span></h1>
+      <p>一个喜欢学习折腾新东西的人</p >
+       <p>喜欢折腾电脑、听歌、看电影，折腾些新玩意。</p >
+       </div>
+
+      <h2>欢迎来到我的第一个个人网站！</h2>
+      <p>哈哈！我终于迈出了第一步,非常感谢DeepSeek的帮助！</p >
+    
+     
+
+     <p id="today-date" style="color: #888; font-weight: bold;"></p >
               
       <!-- 这是一个时钟容器 -->
       <div style="margin-top: 20px; font-size: 24px; font-weight: bold; color: #2980b9;">
         当前时间：<span id="clock"></span>
-      </div>
+      
 
       <!-- 这是让时钟动起来的代码 -->
       <script>
@@ -86,8 +99,8 @@
         updateClock();
       </script>
       <!-- 这里是一个能点击的按钮链接 -->
-      <a href="//www.douyin.com/qishui/playlist/7466629159607863347 " class="按钮" target="_blank">点我去 汽水音乐听歌</a >
-      <a href="//www.douyin.com/video/7647976629548895529 " class="按钮" target="_blank">点我去看红果短剧</a>
+      <a href=" " class="按钮" target="_blank">点我去 汽水音乐听歌</a >
+      <a href="//www.douyin.com/video/7647976629548895529 " class="按钮" target="_blank">点我去看红果短剧</a >
 
        <button onclick="toggleDarkMode()" style="margin-top: 20px; padding: 8px 15px; cursor: pointer;">切换暗黑模式</button>
 
@@ -134,6 +147,30 @@
       card.style.color = '#333';
     }
   }
+</script>
+
+<script>
+  // 1. 显示今天日期
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var weekDay = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"][date.getDay()];
+  document.getElementById('today-date').innerText = "今天是 " + year + "年" + month + "月" + day + "日 " + weekDay;
+
+  // 2. 打字机效果
+  var text = "你好，我是 想哥哥"; 
+  var index = 0;
+  var typewriterElement = document.getElementById('typewriter');
+  
+  function typeText() {
+    if (index < text.length) {
+      typewriterElement.innerText += text.charAt(index);
+      index++;
+      setTimeout(typeText, 200); // 每个字间隔200毫秒，想快一点就把200改成100
+    }
+  }
+  typeText();
 </script>
 
    </body>
