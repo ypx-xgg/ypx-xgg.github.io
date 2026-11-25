@@ -137,22 +137,24 @@
 
 </body>
 
-     <p id="today-date" style="color: #888; font-weight: bold;"></p >
+     <p id="today-date" style="color: #333; font-weight: bold;">今天是 <span id="colored-date" style="color: #e74c3c;"></span></p >
 
      <script>
-        //  显示今天日期
-      var date = new Date();
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var day = date.getDate();
-      var weekDay = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"][date.getDay()];
-      document.getElementById('today-date').innerText = "今天是 " + year + "年" + month + "月" + day + "日 " + weekDay;
-      </script>
+     // 显示今天日期（带颜色版）
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var weekDay = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"][date.getDay()];
+
+// 把数字和星期塞进那个带颜色的壳子里
+document.getElementById('colored-date').innerText = year + "年" + month + "月" + day + "日 " + weekDay;
+             </script>
   
            
       <!-- 这是一个时钟容器 -->
-      <div style="margin-top: 20px; font-size: 24px; font-weight: bold; color: #c8161d ;">
-        当前时间：<span id="clock"></span>
+      <div style="margin-top: 20px; font-size: 24px; font-weight: bold; color: #666 ;">
+        当前时间：<span id="clock" style="color: #e74c3c;"></span>
       </div>
 
       <!-- 这是让时钟动起来的代码 -->
